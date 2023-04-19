@@ -1,8 +1,13 @@
-let admin, name="John";
+console.log(20+80);
+console.log(1+1+1+1+1+2);
 
-admin = name;
+console.log((4+6+9)/77);
 
-alert(admin);
+let a = 10;
 
-const OUR_PLANET="Earth";
-let currentUserName;
+console.log(a);
+console.log(a*9);
+
+let b = 7*a;
+
+console.log(b);
