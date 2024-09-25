@@ -16,13 +16,13 @@ function App() {
       </div>
       <div>
         <button type="answer" onClick={() => OnUserChoice("Rock", computerChoiceSet)}>
-          <img src={require("./Rock.jpeg")} width="200" height="200" alt='Rock'></img>
+          <img src={require("./rps-images/Rock.jpeg")} width="200" height="200" alt='Rock'></img>
         </button>
         <button type="answer" onClick={() => OnUserChoice("Paper", computerChoiceSet)}>
-          <img src={require("./Paper.jpeg")} width="200" height="200" alt='Paper'></img>
+          <img src={require("./rps-images/Paper.jpeg")} width="200" height="200" alt='Paper'></img>
         </button>
         <button type="answer" onClick={() => OnUserChoice("Scissors", computerChoiceSet)}>
-          <img src={require("./Scissors.jpeg")} width="200" height="200" alt='Scissors'></img>
+          <img src={require("./rps-images/Scissors.jpeg")} width="200" height="200" alt='Scissors'></img>
         </button>
       </div>
 
