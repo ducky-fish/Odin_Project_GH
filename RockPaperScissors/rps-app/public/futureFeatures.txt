@@ -1,0 +1,11 @@
+Completed:
+    + Update computer answer after each game. 
+      a.k.a once player has entered answer
+
+Next Features:
+    - Update computer answer after each game. 
+      a.k.a once player has entered answer
+        -- get the onUserChoice function out of App function 
+           find how to pass set state through to externally
+           blocked functions
+    - Make counter of games won and lost
