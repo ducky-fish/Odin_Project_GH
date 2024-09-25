@@ -1,10 +1,14 @@
+
 Completed:
-    +  get the onUserChoice function out of App function 
-       find how to pass set state through to externally
-       blocked functions
+    + connect machineSelect[1] to a variable name
+      clean up variable names
+        (did as a reassignment to another variable
+         after instantiating)
+    
+    + Pass set state more cleanly; perhaps as function
+        (No clue what I meant by this)
 
 Next Features:
-    - connect machineSelect[1] to a variable name
-      clean up variable names
-    - Pass set state more cleanly; perhaps as function
     - Make counter of games won and lost
+    - see if you can directly assign useState declaration to 
+      another variable

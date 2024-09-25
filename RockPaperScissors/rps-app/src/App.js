@@ -4,7 +4,10 @@ import { useState } from 'react';
 
 
 function App() {
-  const [computerChoice, setComputerChoice] = useState(getComputerChoice());
+
+  const [computerChoice, setComputerChoice] = useState(GetComputerChoice);
+  
+  const computerChoiceSet = [computerChoice, setComputerChoice];
 
   return (
     <>
@@ -12,46 +15,46 @@ function App() {
         <p>{computerChoice}</p>
       </div>
       <div>
-        <button type="answer" onClick={() => onUserChoice("Rock", [computerChoice,setComputerChoice])}>
+        <button type="answer" onClick={() => OnUserChoice("Rock", computerChoiceSet)}>
           <img src={require("./Rock.jpeg")} width="200" height="200" alt='Rock'></img>
         </button>
-        <button type="answer" onClick={() => onUserChoice("Paper", [computerChoice,setComputerChoice])}>
+        <button type="answer" onClick={() => OnUserChoice("Paper", computerChoiceSet)}>
           <img src={require("./Paper.jpeg")} width="200" height="200" alt='Paper'></img>
         </button>
-        <button type="answer" onClick={() => onUserChoice("Scissors", [computerChoice,setComputerChoice])}>
+        <button type="answer" onClick={() => OnUserChoice("Scissors", computerChoiceSet)}>
           <img src={require("./Scissors.jpeg")} width="200" height="200" alt='Scissors'></img>
         </button>
       </div>
-
 
     </>
   );
 }
 
-function onUserChoice(userSelect, machineSelect) {
-  console.log(userSelect.toString());
-  console.log(machineSelect.toString());
-  const currMachineSelect = machineSelect[0];
-  
+function OnUserChoice(userSelect, machineSelect) {
+
+  const computerChoiceCurrent = machineSelect[0];
+  let computerChoiceNext = machineSelect[1];
   let alertMessage = "";
-  if (userSelect === currMachineSelect) {
+
+  if (userSelect === computerChoiceCurrent) {
     alertMessage = "No Winner :(";
   }
-  else if ((userSelect === "Rock" && currMachineSelect === "Scissors") ||
-    (userSelect === "Paper" && currMachineSelect === "Rock") ||
-    (userSelect === "Scissors" && currMachineSelect === "Paper")
+  else if ((userSelect === "Rock" && computerChoiceCurrent === "Scissors") ||
+           (userSelect === "Paper" && computerChoiceCurrent === "Rock") ||
+           (userSelect === "Scissors" && computerChoiceCurrent === "Paper")
   ) {
     alertMessage = "Player Wins :)";
   }
   else {
     alertMessage = "Computer Wins :(";
   }
-  machineSelect[1](getComputerChoice());
+
+  computerChoiceNext(GetComputerChoice());
   return alert(alertMessage);
 }
 
 
-function getComputerChoice() {
+function GetComputerChoice() {
   const playChoice = ['Rock', 'Paper', 'Scissors'];
   return (playChoice[Math.floor(Math.random() * playChoice.length)]).toString();
 }
