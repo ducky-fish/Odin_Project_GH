@@ -1,11 +1,10 @@
 Completed:
-    + Update computer answer after each game. 
-      a.k.a once player has entered answer
+    +  get the onUserChoice function out of App function 
+       find how to pass set state through to externally
+       blocked functions
 
 Next Features:
-    - Update computer answer after each game. 
-      a.k.a once player has entered answer
-        -- get the onUserChoice function out of App function 
-           find how to pass set state through to externally
-           blocked functions
+    - connect machineSelect[1] to a variable name
+      clean up variable names
+    - Pass set state more cleanly; perhaps as function
     - Make counter of games won and lost
