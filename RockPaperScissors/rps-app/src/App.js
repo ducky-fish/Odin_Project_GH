@@ -6,13 +6,21 @@ import { useState } from 'react';
 function App() {
 
   const [computerChoice, setComputerChoice] = useState(GetComputerChoice);
-  
+
   const computerChoiceSet = [computerChoice, setComputerChoice];
 
   return (
     <>
       <div className="rps">
         <p>{computerChoice}</p>
+        <p>
+          <br />
+          Player   : 
+          <br />
+          Computer : 
+          <br />
+        </p>
+        
       </div>
       <div>
         <button type="answer" onClick={() => OnUserChoice("Rock", computerChoiceSet)}>
@@ -30,6 +38,11 @@ function App() {
   );
 }
 
+// function Scoring(agent) {
+  
+// }
+
+
 function OnUserChoice(userSelect, machineSelect) {
 
   const computerChoiceCurrent = machineSelect[0];
@@ -40,14 +53,16 @@ function OnUserChoice(userSelect, machineSelect) {
     alertMessage = "No Winner :(";
   }
   else if ((userSelect === "Rock" && computerChoiceCurrent === "Scissors") ||
-           (userSelect === "Paper" && computerChoiceCurrent === "Rock") ||
-           (userSelect === "Scissors" && computerChoiceCurrent === "Paper")
+    (userSelect === "Paper" && computerChoiceCurrent === "Rock") ||
+    (userSelect === "Scissors" && computerChoiceCurrent === "Paper")
   ) {
     alertMessage = "Player Wins :)";
+
   }
   else {
     alertMessage = "Computer Wins :(";
   }
+
 
   computerChoiceNext(GetComputerChoice());
   return alert(alertMessage);
