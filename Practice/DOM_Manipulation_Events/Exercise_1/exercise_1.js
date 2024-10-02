@@ -27,19 +27,13 @@ const divPinkBlack = document.createElement("div");
 content.setAttribute("div","divPinkBlack");
 divPinkBlack.classList.toggle("divPinkBlack");
 
-divPinkBlack.style.borderStyle = 'solid';
-divPinkBlack.style.borderWidth = 'medium';
-divPinkBlack.style.borderColor = 'black';
-divPinkBlack.style.backgroundColor = 'pink';
+divPinkBlack.setAttribute("style", "border: medium solid black; background: pink");
 
 divPinkBlack.classList.toggle("h1");
 divPinkBlack.classList.toggle("p");
 
 const h1 = document.createElement("h1");
 const p = document.createElement("p");
-
-
-// divPinkBlack.textContent = "what the hell is happening";
 
 h1.textContent = "I'm in a div!";
 p.textContent = "Me too!";
