@@ -38,20 +38,32 @@
         const button = document.querySelector('button');
 
         function deleteMe(){
-            const deleteButton = document.createElement("button");
-            deleteButton.textContent = "delete";
+            
         }
 
         function addToList() {
+
             const newItem = document.createElement("p");
             // const deleteButton = document.createElement()
+            newItem.classList.toggle("newItem");
             newItem.textContent = input.value;
-            // newItem.appendChild();
+            newItem.style.color = "red";
+            // newItem.style.marginRight = "3em";
+            
+            const deleteButton = document.createElement("button");
+            deleteButton.id = "deleteButtonId";
+            deleteButton.textContent = "delete";
+            deleteButton.style.margin = "1em";
+
+            newItem.appendChild(deleteButton);
             list.appendChild(newItem);
+
         }
-    
+        
+        button.addEventListener("click", deleteMe);
         button.addEventListener("click", addToList);
 
+        
         // button.addEventListener("click", deleteMe);
         // btn.addEventListener("click", function (e) {
         //     e.target.classList.toggle();
