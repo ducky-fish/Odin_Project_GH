@@ -25,6 +25,7 @@ container.appendChild(h3Blue);
 
 const divPinkBlack = document.createElement("div");
 content.setAttribute("div","divPinkBlack");
+//What is the line below doing??
 divPinkBlack.classList.toggle("divPinkBlack");
 
 divPinkBlack.setAttribute("style", "border: medium solid black; background: pink");
