@@ -15,12 +15,12 @@ function App() {
         <p>{computerChoice}</p>
         <p>
           <br />
-          Player   : 
+          Player   :
           <br />
-          Computer : 
+          Computer :
           <br />
         </p>
-        
+
       </div>
       <div>
         <button type="answer" onClick={() => OnUserChoice("Rock", computerChoiceSet)}>
@@ -38,34 +38,47 @@ function App() {
   );
 }
 
-// function Scoring(agent) {
-  
-// }
+function Scoring(whoWins) {
+  let alertMessage = "";
+  const scoreCount = [0,0];
+
+  switch (whoWins) {
+    case "Player":
+      alertMessage = "Player Wins :)";
+      break;
+    case "Computer":
+      alertMessage = "Computer Wins :("
+      break;
+    case "Nobody":
+      alertMessage = "No Winner 0_0";
+  }
+  return alertMessage;
+}
 
 
 function OnUserChoice(userSelect, machineSelect) {
 
   const computerChoiceCurrent = machineSelect[0];
   let computerChoiceNext = machineSelect[1];
-  let alertMessage = "";
+  let winner = "";
 
   if (userSelect === computerChoiceCurrent) {
-    alertMessage = "No Winner :(";
+    winner = "Nobody";
   }
   else if ((userSelect === "Rock" && computerChoiceCurrent === "Scissors") ||
     (userSelect === "Paper" && computerChoiceCurrent === "Rock") ||
     (userSelect === "Scissors" && computerChoiceCurrent === "Paper")
   ) {
-    alertMessage = "Player Wins :)";
-
+    winner = "Player";
   }
   else {
-    alertMessage = "Computer Wins :(";
+    winner = "Computer";
   }
+
 
 
   computerChoiceNext(GetComputerChoice());
-  return alert(alertMessage);
+  return alert(Scoring(winner));
 }
 
 
