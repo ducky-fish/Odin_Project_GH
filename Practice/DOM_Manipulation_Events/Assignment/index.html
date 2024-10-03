@@ -37,8 +37,16 @@
         const input = document.querySelector('input');
         const button = document.querySelector('button');
 
-        function deleteMe(){
+        function deleteMeButton(){
+            const deleteButton = document.createElement("button");
+            deleteButton.id = "deleteButtonId";
+            deleteButton.textContent = "delete";
+            deleteButton.style.margin = "1em";
             
+            deleteButton.addEventListener("click", function() {
+                this.parentElement.remove(this.parentElement);
+            });
+            return deleteButton;
         }
 
         function addToList() {
@@ -49,18 +57,12 @@
             newItem.textContent = input.value;
             newItem.style.color = "red";
             // newItem.style.marginRight = "3em";
-            
-            const deleteButton = document.createElement("button");
-            deleteButton.id = "deleteButtonId";
-            deleteButton.textContent = "delete";
-            deleteButton.style.margin = "1em";
 
-            newItem.appendChild(deleteButton);
+            newItem.appendChild(deleteMeButton());
             list.appendChild(newItem);
-
         }
         
-        button.addEventListener("click", deleteMe);
+
         button.addEventListener("click", addToList);
 
         
