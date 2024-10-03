@@ -37,43 +37,37 @@
         const input = document.querySelector('input');
         const button = document.querySelector('button');
 
-        function deleteMeButton(){
+        input.focus();
+
+
+        function deleteMeButton() {
             const deleteButton = document.createElement("button");
-            deleteButton.id = "deleteButtonId";
+
             deleteButton.textContent = "delete";
             deleteButton.style.margin = "1em";
-            
-            deleteButton.addEventListener("click", function() {
+
+            deleteButton.addEventListener("click", function () {
                 this.parentElement.remove(this.parentElement);
             });
             return deleteButton;
         }
 
         function addToList() {
+            if (input.value !== "") {
+                const newItem = document.createElement("p");
+                newItem.classList.toggle("newItem");
+                newItem.textContent = input.value;
+                newItem.style.color = "red";
 
-            const newItem = document.createElement("p");
-            // const deleteButton = document.createElement()
-            newItem.classList.toggle("newItem");
-            newItem.textContent = input.value;
-            newItem.style.color = "red";
-            // newItem.style.marginRight = "3em";
-
-            newItem.appendChild(deleteMeButton());
-            list.appendChild(newItem);
+                newItem.appendChild(deleteMeButton());
+                list.appendChild(newItem);
+                input.value = "";
+            }
+            input.focus();
         }
-        
 
         button.addEventListener("click", addToList);
-
-        
-        // button.addEventListener("click", deleteMe);
-        // btn.addEventListener("click", function (e) {
-        //     e.target.classList.toggle();
-        // });
-
-
-        // buttons is a node list. It looks and acts much like an array.
-
+        button.addEventListener("click", document.querySelector(input.item).focus);
     </script>
 </body>
 
