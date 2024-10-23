@@ -2,24 +2,28 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const rows = [];
+  for (let i = 0; i < 16; i++){
+    rows.push(<FlexContainer />);
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        {rows}
+    </>
   );
+}
+
+function FlexContainer(){
+  return <div className='Container'> <FlexItem /> </div>
+
+}
+function FlexItem(){
+  const columns = [];
+  for (let j = 0; j < 16; j++) {
+    columns.push(<div className='Item'>Ite</div>);
+  }
+  return columns;
 }
 
 export default App;

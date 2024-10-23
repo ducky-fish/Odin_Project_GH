@@ -28,6 +28,19 @@
   color: #61dafb;
 }
 
+.Container {
+  display: block flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  border: 5px solid blue;
+}
+
+.Item {
+  border: 2px solid red;
+  background-color: white;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +49,4 @@
     transform: rotate(360deg);
   }
 }
+
