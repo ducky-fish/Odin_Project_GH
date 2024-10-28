@@ -8,14 +8,12 @@ function App() {
   }
 
   return (
-    <>
+    <div className='WebContainer'>
       <h1>How to draw 4 babies</h1>
-      <div className='WebContainer'>
 
-        {rows}
+      {rows}
 
-      </div>
-    </>
+    </div>
 
 
 
