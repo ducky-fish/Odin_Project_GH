@@ -39,27 +39,36 @@ function FlexItem() {
 };
 
 
+// const [clicked, setClicked] = useState(true);
+// how do i make the clicked item specifically change something else
+// check if clicked is off then let the item use that as its stylesheet
+// className {clicked ? ItemNew :ItemInitial}
+
+
 function OnOffButtonComponent() {
-  const [isClicked, setIsClicked] = useState(false);
+  const [clicked, setClicked] = useState(false);
 
-  const handleClick = () => {
-    setIsClicked(!isClicked);
-  };
-
-  return <button className='OnOffButton' >On/Off</button>;
+  // const handleOnClick = () => {
+  //   setClicked(!clicked);
+  //   handleMouseEnter;
+  // };
+  
+  return <button className='OnOffButton' onClick={HandleClick}>On/Off</button>;
 }
 
-const MyComponent = () => {
-  const [divChangeBackground, setDivChangeBackground] = useState(false);
+const HandleClick = () => {
+
+  const [clicked, setClicked] = useState(true);
 
   const handleMouseEnter = () => {
     setDivChangeBackground(!divChangeBackground);
   };
 
   return (
+    
     <div
-      className={divChangeBackground ? 'ItemNew' : 'ItemInitial'}
-      onMouseEnter={handleMouseEnter}
+      className={clicked ? 'ItemNew' : 'ItemInitial'}
+      // onMouseEnter={}
     >
       Ite
     </div>
