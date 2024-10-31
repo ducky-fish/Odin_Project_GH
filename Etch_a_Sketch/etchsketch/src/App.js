@@ -46,14 +46,14 @@ function OnOffButtonComponent() {
     setIsClicked(!isClicked);
   };
 
-  return <button className='OnOffButton' >On/Off</button>;
+  return <button className='OnOffButton' onClick={handleClick}>On/Off</button>;
 }
 
 const MyComponent = () => {
   const [divChangeBackground, setDivChangeBackground] = useState(false);
 
   const handleMouseEnter = () => {
-    setDivChangeBackground(!divChangeBackground);
+    setDivChangeBackground(true);
   };
 
   return (
